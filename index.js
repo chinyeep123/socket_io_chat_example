@@ -2,9 +2,9 @@
 // const http = require("http").Server(app);
 // const io = require("socket.io")(http);
 // const port = process.env.PORT || 3000;
-import { Server } from "socket.io";
+// import { Server } from "socket.io";
 
-const io = new Server(3000);
+const io = require("socket.io")(3000);
 
 // app.get("/", (req, res) => {
 //   // res.sendFile(__dirname + "/index.html");
