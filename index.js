@@ -1,10 +1,13 @@
-const app = require("express")();
-const http = require("http").Server(app);
-const io = require("socket.io")(http);
-const port = process.env.PORT || 3000;
+// const app = require("express")();
+// const http = require("http").Server(app);
+// const io = require("socket.io")(http);
+// const port = process.env.PORT || 3000;
+import { Server } from "socket.io";
+
+const io = new Server(3000);
 
 // app.get("/", (req, res) => {
-//   res.sendFile(__dirname + "/index.html");
+//   // res.sendFile(__dirname + "/index.html");
 // });
 
 io.on("connection", (socket) => {
@@ -29,6 +32,6 @@ io.on("connection", (socket) => {
 //   });
 // });
 
-http.listen(port, () => {
-  console.log(`Socket.IO server running at http://localhost:${port}/`);
-});
+// http.listen(port, () => {
+//   console.log(`Socket.IO server running at http://localhost:${port}/`);
+// });
